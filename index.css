@@ -153,6 +153,17 @@ body .animate-on-scroll {
 body .animate-on-scroll.in-view {
   animation: slideInFromBottom 0.8s ease-out forwards;
 }
+@keyframes floatArrow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+body #FirstSection .image-container img {
+  animation: floatArrow 2.5s ease-in-out infinite;
+}
 @media (max-width: 1000px) {
   body * {
     box-sizing: border-box;

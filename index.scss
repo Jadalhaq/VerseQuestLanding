@@ -198,6 +198,23 @@ body {
     }
   }
 
+  // 1. Define the animation keyframes
+  @keyframes floatArrow {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px); // Moves the arrow up by 8px at the midpoint
+    }
+  }
+
+  // 2. Apply the animation to the arrow
+  // This selector specifically targets the arrow image in your first section
+  #FirstSection .image-container img {
+    animation: floatArrow 2.5s ease-in-out infinite;
+  }
+
   @media (max-width: 1000px) {
     * {
       box-sizing: border-box;
