@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="animation.js"></script>
+    <title>VerseQuest</title>
+  </head>
+  <body>
+    <div class="glow-blur-1"></div>
+    <div class="glow-blur-2"></div>
+
+    <div id="FirstSection" class="animate-on-scroll">
+      <h1>VerseQuest</h1>
+      <h2>The book is timeless, not the means</h2>
+
+      <div class="button-container">
+        <button
+          id="joinWaitlist"
+          onclick="document.getElementById('form').scrollIntoView({ behavior:
+      'smooth' });"
+        >
+          Join the waitlist
+        </button>
+      </div>
+
+      <p>Scroll to learn more</p>
+
+      <div class="image-container">
+        <img src="img/arrow.png" alt="Down arrow" />
+      </div>
+    </div>
+
+    <div id="Content">
+      <div id="content1" class="animate-on-scroll">
+        <img src="img/placeholder.png" alt="firstImg" />
+        <div id="text">
+          <h1>First element</h1>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit nobis
+            ducimus adipisci temporibus minima ipsam quis accusantium, harum
+            laudantium reprehenderit nemo incidunt doloremque officia molestias
+            explicabo aliquid, omnis at illum?
+          </p>
+        </div>
+      </div>
+      <div id="content2" class="animate-on-scroll">
+        <div id="text">
+          <h1>Second element</h1>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit nobis
+            ducimus adipisci temporibus minima ipsam quis accusantium, harum
+            laudantium reprehenderit nemo incidunt doloremque officia molestias
+            explicabo aliquid, omnis at illum?
+          </p>
+        </div>
+        <img src="img/placeholder.png" alt="firstImg" />
+      </div>
+      <div id="content3" class="animate-on-scroll">
+        <img src="img/placeholder.png" alt="firstImg" />
+        <div id="text">
+          <h1>Third element</h1>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit nobis
+            ducimus adipisci temporibus minima ipsam quis accusantium, harum
+            laudantium reprehenderit nemo incidunt doloremque officia molestias
+            explicabo aliquid, omnis at illum?
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="form" class="animate-on-scroll">
+      <h1>Join the waitlist now!</h1>
+      <iframe
+        width="540"
+        height="305"
+        src="https://39d141a3.sibforms.com/serve/MUIFAAJZaqdFvvWZO7xf1FmCPmyzaai1e7y5lYyMy9buTZ8e4CMPzIuGzzLW2gr0yEl_ka00DgaRHGMMLe1YfQ2u35WGg3cTvcwXjx5KeFPq5XlK2qk_-id7eHmCudqzs3VZ6v9dHCpVgRJxjjJ54m4gsGcKkg3vjnvo9mhTR40kHF50XNOa9HAbHZp6Tk-uVZX85crn1FaE3sUMmQ=="
+        frameborder="0"
+        scrolling="auto"
+        allowfullscreen
+        style="
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          max-width: 100%;
+        "
+      ></iframe>
+    </div>
+    <script>
+      document.addEventListener("scroll", function () {
+        const scrollY = window.scrollY;
+
+        const glow1 = document.querySelector(".glow-blur-1");
+        const glow2 = document.querySelector(".glow-blur-2");
+
+        // Make sure the elements exist before trying to move them
+        if (glow1) {
+          // This glow will move down at 30% of the scroll speed
+          glow1.style.transform = `translateY(${scrollY * 0.3}px)`;
+        }
+
+        if (glow2) {
+          // This glow moves at a different speed for a better depth effect
+          glow2.style.transform = `translateY(${scrollY * 0.15}px)`;
+        }
+      });
+    </script>
+  </body>
+</html>

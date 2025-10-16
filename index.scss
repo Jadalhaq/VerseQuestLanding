@@ -1,0 +1,200 @@
+// Define font variables
+$font-heading: "Montserrat", sans-serif;
+$font-body: "Plus Jakarta Sans", sans-serif;
+
+body {
+  background-color: #000;
+  position: relative; // To contain the glow elements
+  overflow-x: hidden; // Prevents horizontal scrollbars from the glows
+
+  .glow-blur-1,
+  .glow-blur-2 {
+    // Glows are fixed relative to the viewport, not the page
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: -1;
+    opacity: 0.15;
+
+    // Add a subtle transition for smoothness when scrolling starts and stops
+    transition: transform 0.2s ease-out;
+  }
+
+  .glow-blur-1 {
+    background-color: #c738d8; // Your bright purple
+    top: -200px;
+    left: -200px;
+  }
+
+  .glow-blur-2 {
+    background-color: #5838c7; // A complementary blue/purple
+    bottom: -300px;
+    right: -300px;
+  }
+
+  #FirstSection {
+    h1 {
+      color: #d732a8;
+      font-size: 8rem;
+      font-family: $font-heading;
+      text-align: center;
+      margin-top: 18rem;
+    }
+
+    h2 {
+      color: #fff;
+      font-size: 2rem;
+      font-family: $font-body;
+      text-align: center;
+      margin-top: -4rem;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 8.5rem;
+
+      #joinWaitlist {
+        background-color: #e02ad6; // Bright magenta/purple color from image
+        color: #fff;
+        font-family: $font-body;
+        border: none;
+        border-radius: 50px; // Creates the pill shape
+        padding: 12px 30px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none; // Removes underline if used on an <a> tag
+        display: inline-block;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+
+        // Hover state for mouse-over effect
+        &:hover {
+          background-color: #c424b9; // A slightly darker shade for hover
+          transform: scale(1.05); // Slightly enlarges the button on hover
+        }
+
+        // Active state for click effect
+        &:active {
+          background-color: #a31f99; // An even darker shade for the click
+          transform: scale(0.98); // Slightly shrinks the button when clicked
+        }
+      }
+    }
+
+    p {
+      color: #fff;
+      font-size: 1.5rem;
+      font-family: $font-body;
+      text-align: center;
+      margin-top: 8rem;
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+
+      img {
+        margin: 0 auto;
+        width: 3%;
+        margin-top: -.25rem;
+      }
+    }
+  }
+
+  #Content {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    color: #fff;
+    margin-top: 5rem;
+    align-items: center;
+
+    // Shared styles for all content blocks
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 10rem;
+    }
+
+    // Styles for the text within each block
+    #text {
+      width: 40%;
+
+      h1 {
+        color: #c738d8; // Bright purple from image
+        font-size: 2.25rem;
+        font-family: $font-heading;
+        margin-bottom: 0.5rem;
+      }
+      p {
+        font-size: 1.5rem;
+        font-family: $font-body;
+        line-height: 1.5;
+      }
+    }
+
+    img {
+      max-width: 280px; // Adjust size as needed
+      margin: 0 6rem;
+      height: auto;
+    }
+
+    // Specific layout for the middle element
+    #content2 {
+      #text {
+        order: 1; // Puts text first
+      }
+      img {
+        order: 2; // Puts image second
+      }
+    }
+
+    // Responsive behavior for smaller screens
+    @media screen and (max-width: 900px) {
+      grid-template-columns: 1fr; // Stacks the columns vertically
+    }
+  }
+
+  #form {
+    h1 {
+      color: #d732a8;
+      font-size: 4rem;
+      font-family: $font-heading;
+      text-align: center;
+      margin-top: 8rem;
+    }
+
+    iframe {
+      margin-top: -3rem;
+    }
+  }
+
+  // Define the animation keyframes
+  @keyframes slideInFromBottom {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  // A class to apply the animation
+  .animate-on-scroll {
+    // Initially, hide the element before the animation is triggered
+    opacity: 0;
+
+    // When the 'in-view' class is added by JavaScript, apply the animation
+    &.in-view {
+      animation: slideInFromBottom 0.8s ease-out forwards;
+    }
+  }
+}
