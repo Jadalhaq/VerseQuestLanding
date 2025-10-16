@@ -29,7 +29,7 @@ body #FirstSection h1 {
   font-size: 8rem;
   font-family: "Montserrat", sans-serif;
   text-align: center;
-  margin-top: 18rem;
+  margin-top: 12%;
 }
 body #FirstSection h2 {
   color: #fff;
@@ -41,7 +41,7 @@ body #FirstSection h2 {
 body #FirstSection .button-container {
   display: flex;
   justify-content: center;
-  margin-top: 8.5rem;
+  margin-top: 5%;
 }
 body #FirstSection .button-container #joinWaitlist {
   background-color: #e02ad6;
@@ -71,7 +71,7 @@ body #FirstSection p {
   font-size: 1.5rem;
   font-family: "Plus Jakarta Sans", sans-serif;
   text-align: center;
-  margin-top: 8rem;
+  margin-top: 12%;
 }
 body #FirstSection .image-container {
   display: flex;
@@ -152,4 +152,82 @@ body .animate-on-scroll {
 }
 body .animate-on-scroll.in-view {
   animation: slideInFromBottom 0.8s ease-out forwards;
+}
+@media (max-width: 1000px) {
+  body * {
+    box-sizing: border-box;
+  }
+  body html,
+  body body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  body #FirstSection h1 {
+    font-size: 300%;
+    margin-top: 12rem;
+  }
+  body #FirstSection h2 {
+    font-size: 100%;
+    margin-top: -2rem;
+    padding: 0 1rem;
+  }
+  body #FirstSection .button-container {
+    margin-top: 20%;
+  }
+  body #FirstSection p {
+    margin-top: 55%;
+  }
+  body #Content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body #Content #content1,
+  body #Content #content2,
+  body #Content #content3 {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  body #Content #content1 img,
+  body #Content #content2 img,
+  body #Content #content3 img {
+    max-width: 150px;
+    margin: 0 auto;
+    order: 1;
+  }
+  body #Content #content1 #text,
+  body #Content #content2 #text,
+  body #Content #content3 #text {
+    width: 80%;
+    order: 0;
+  }
+  body #Content #content1 #text h1,
+  body #Content #content2 #text h1,
+  body #Content #content3 #text h1 {
+    font-size: 1.5rem;
+  }
+  body #Content #content1 #text p,
+  body #Content #content2 #text p,
+  body #Content #content3 #text p {
+    font-size: 1rem;
+  }
+  body #Content img {
+    margin: 0;
+  }
+  body #form {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+  body #form h1 {
+    font-size: 2rem;
+  }
+  body #form iframe {
+    max-width: 100% !important;
+    width: 100% !important;
+    display: block;
+    margin-top: -5rem;
+  }
 }/*# sourceMappingURL=index.css.map */

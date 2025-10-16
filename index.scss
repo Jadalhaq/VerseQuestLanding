@@ -40,7 +40,7 @@ body {
       font-size: 8rem;
       font-family: $font-heading;
       text-align: center;
-      margin-top: 18rem;
+      margin-top: 12%;
     }
 
     h2 {
@@ -54,7 +54,7 @@ body {
     .button-container {
       display: flex;
       justify-content: center;
-      margin-top: 8.5rem;
+      margin-top: 5%;
 
       #joinWaitlist {
         background-color: #e02ad6; // Bright magenta/purple color from image
@@ -90,7 +90,7 @@ body {
       font-size: 1.5rem;
       font-family: $font-body;
       text-align: center;
-      margin-top: 8rem;
+      margin-top: 12%;
     }
 
     .image-container {
@@ -100,7 +100,7 @@ body {
       img {
         margin: 0 auto;
         width: 3%;
-        margin-top: -.25rem;
+        margin-top: -0.25rem;
       }
     }
   }
@@ -195,6 +195,96 @@ body {
     // When the 'in-view' class is added by JavaScript, apply the animation
     &.in-view {
       animation: slideInFromBottom 0.8s ease-out forwards;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    * {
+      box-sizing: border-box;
+    }
+
+    // Failsafe: Apply overflow hidden to both html and body
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    // --- Adjustments for the Hero Section ---
+    #FirstSection {
+      h1 {
+        font-size: 300%; // Reduce main title font size
+        margin-top: 12rem;
+      }
+      h2 {
+        font-size: 100%; // Reduce subtitle font size
+        margin-top: -2rem;
+        padding: 0 1rem; // Add some horizontal padding
+      }
+      .button-container {
+        margin-top: 20%;
+      }
+      p {
+        margin-top: 55%;
+      }
+    }
+
+    // --- Adjustments for the Feature Content ---
+    #Content {
+      // Reset the layout to a single column
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      // Ensure all content blocks stack vertically
+      #content1,
+      #content2,
+      #content3 {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+
+        img {
+          max-width: 150px; // Reduce image size
+          margin: 0 auto; // Center the image
+          order: 1; // Reset order
+        }
+
+        #text {
+          width: 80%;
+          order: 0; // Reset order
+
+          h1 {
+            font-size: 1.5rem; // Reduce headline size
+          }
+
+          p {
+            font-size: 1rem; // Reduce paragraph size
+          }
+        }
+      }
+
+      img {
+        margin: 0; // Remove horizontal margins on mobile
+      }
+    }
+
+    #form {
+      width: 100%;
+      max-width: 100%; // Prevents the container from overflowing
+      padding: 0 1rem; // Adds some space on the sides
+      box-sizing: border-box; // Ensures padding is included in the width calculation
+
+      h1 {
+        font-size: 2rem; // Reduce form title size
+      }
+
+      iframe {
+        max-width: 100% !important; // Crucial rule: ensures iframe is never wider than its container
+        width: 100% !important; // Forces the iframe to fill its container's width
+        display: block;
+        margin-top: -5rem;
+      }
     }
   }
 }
